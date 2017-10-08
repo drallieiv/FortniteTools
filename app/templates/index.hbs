@@ -1,0 +1,38 @@
+<h2>Here is a list of all Fortnite Tools modules</h2>
+
+<div class="layout-column layout-gt-sm-row">
+
+  {{!- Chest Simulator Module --}}
+  <div class="layout-column flex-gt-sm-50">
+    {{#paper-card as |card| }}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Chest Simulator{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <p>Simulation of chest reward depending on medals.</p>
+        {{#card.actions class="layout-row layout-align-end"}}
+         {{#paper-button}}Go to chest simulator{{/paper-button}}
+       {{/card.actions}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+
+  {{!- Other Module --}}
+  <div class="layout-column flex-gt-sm-50">
+    {{#paper-card as |card| }}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Another Module{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <p>Description of the other module.</p>
+        {{#card.actions class="layout-row layout-align-end"}}
+         {{#paper-button}}Go to other module{{/paper-button}}
+       {{/card.actions}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+</div>

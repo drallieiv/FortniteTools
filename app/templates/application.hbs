@@ -31,4 +31,10 @@
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
 
-{{outlet}}
+<div class="layout-row md-padding">
+  <div class="flex-gt-md-15"/>
+  <div class="flex-grow flex-gt-md-70">
+    {{outlet}}
+  </div>
+  <div class="flex-gt-md-15"/>
+</div>
