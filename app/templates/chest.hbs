@@ -1,1 +1,67 @@
-CHEST SIMULATOR
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    <h1>Chest Simulator</h1>
+  {{/card.title}}
+  {{#card.content class="chest"}}
+
+    <div class="layout-row layout-align-space-around-start">
+      {{#paper-select class="mission-selector flex-35"
+        label="Mission Type"
+        options=missions
+        selected=mission
+        onChange=(action (mut mission))
+        as |mission|}}
+        {{mission.name}}
+      {{/paper-select}}
+      <div class="flex-45 layout-align-start-center">
+        {{mission.tips}}
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="layout-column layout-gt-md-row layout-align-space-around-start">
+      <div class="flex-100 flex-gt-md-45">
+        <div class="badge-category">Mission Badges</div>
+        {{#if mission}}
+          <div class="layout-row">
+            <div class="layout badge-name layout-align-start-center">
+              <span>Badge Name</span>
+            </div>
+            <div class="layout badge-level">
+              {{badge-reward-selector}}
+            </div>
+            <div class="layout badge-reward layout-align-end-center">+2</div>
+          </div>
+        {{else}}
+          <span>Select the mission type</span>
+        {{/if}}
+      </div>
+      <div class="flex-100 flex-gt-md-45">
+        <div class="badge-category">Basic Badges</div>
+        {{#each baseBadges as |badge|}}
+          <div class="layout-row">
+            <div class="layout badge-name layout-align-start-center">
+              <span>{{badge.name}}</span>
+            </div>
+            <div class="layout badge-reward">
+              {{badge-reward-selector rewards=badge.rewards selectedReward=badge.selectedReward}}
+            </div>
+            <div class="layout badge-bars layout-align-end-center">
+              {{#if badge.selectedReward.bars}}
+                + {{badge.selectedReward.bars}}
+              {{else}}
+                0
+              {{/if}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <hr/>
+
+    {{badge-reward-result bars=totalBars}}
+
+  {{/card.content}}
+{{/paper-card}}

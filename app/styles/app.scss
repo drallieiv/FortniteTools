@@ -1,1 +1,48 @@
 @import 'ember-paper';
+
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+md-input-container.mission-selector {
+  margin: 0;
+
+  .md-errors-spacer {
+    display: none;
+  }
+}
+
+.chest {
+  .badge-name {
+    width: 300px;
+  }
+
+  .badge-bars {
+    width: 50px;
+  }
+
+  .badge-reward {
+    width: 300px;
+  }
+
+  .badge-category {
+    font-weight: bold;
+    margin: 10px 25px;
+  }
+}
+
+.reward {
+  &.md-button{
+    font-size: .7em;
+    min-width: 0;
+    display: inline-block;
+    margin: 1px -1px;
+  }
+
+
+  &.reward-selected.md-button.md-raised, &.reward-selected.md-button.md-raised.md-focused{
+    color: #FFFFFF;
+    background-color: #ff5722;
+  }
+}
