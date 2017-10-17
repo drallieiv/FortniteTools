@@ -24,15 +24,23 @@
       <div class="flex-100 flex-gt-md-45">
         <div class="badge-category">Mission Badges</div>
         {{#if mission}}
+        {{#each missionBadges as |badge|}}
           <div class="layout-row">
             <div class="layout badge-name layout-align-start-center">
-              <span>Badge Name</span>
+              <span>{{badge.name}}</span>
             </div>
-            <div class="layout badge-level">
-              {{badge-reward-selector}}
+            <div class="layout badge-reward">
+              {{badge-reward-selector rewards=badge.rewards selectedReward=badge.selectedReward}}
             </div>
-            <div class="layout badge-reward layout-align-end-center">+2</div>
+            <div class="layout badge-bars layout-align-end-center">
+              {{#if badge.selectedReward.bars}}
+                + {{badge.selectedReward.bars}}
+              {{else}}
+                0
+              {{/if}}
+            </div>
           </div>
+        {{/each}}
         {{else}}
           <span>Select the mission type</span>
         {{/if}}
