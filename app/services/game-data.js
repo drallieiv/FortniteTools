@@ -198,7 +198,7 @@ export default Ember.Service.extend({
 
     baseBadges.push(
       Badge.create({key: 'EXPLO', name: 'Exploration'})
-      .addLevel(level.platinium, 6),
+      .addLevel(level.platinium, 2),
 
       Badge.create({key: 'COMBAT', name: 'Combat'})
       .addLevel(level.gold, 2)

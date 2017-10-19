@@ -1,8 +1,8 @@
 {
-  "name": "workspace",
-  "version": "0.0.0",
+  "name": "FortniteTools",
+  "version": "0.0.1",
   "private": true,
-  "description": "Small description for workspace goes here",
+  "description": "Collection of tools for Fortnite",
   "license": "MIT",
   "author": "",
   "directories": {
@@ -13,7 +13,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
