@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'workspace',
+    modulePrefix: 'FortniteTools',
     environment,
     rootURL: '/',
     locationType: 'auto',
